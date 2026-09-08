@@ -6,3 +6,7 @@ def schedule(requests):
             tl.append({'id':r['id'],'start':t,'end':t+r['duration']})
             t+=r['duration']+5
     return {'scheduled':len(tl),'timeline':tl}
+
+
+def saa_free(lat, lon):
+    return not (-30 < lat < 10 and -60 < lon < -20)
