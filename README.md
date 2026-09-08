@@ -93,3 +93,11 @@ python scripts/generate_visuals.py
 
 ## License
 MIT - kv-creates 2026
+
+## Performance
+
+| Metric | Value |
+|---|---|
+| Period 7000km | 5828 s |
+| Transit depth | 1.2 percent |
+| Tests | 5 passed |
