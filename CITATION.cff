@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: Antariksh-Drishti Deep Space Observatory
+message: If you use this software, please cite it as below.
+authors:
+  - family-names: Vishwakarma
+    given-names: Krishna
+    alias: kv-creates
+version: 1.3.0
+date-released: 2026-09-14
+license: MIT
+repository-code: https://github.com/kv-creates/Antariksh-Drishti-Deep-Space-Observatory
+keywords: [exoplanets, photometry, scheduling, orbit-mechanics]

@@ -1,10 +1,8 @@
 __pycache__/
 *.py[cod]
 .venv/
-venv/
-.env
-*.db
-.DS_Store
 .pytest_cache/
-*.fits
-*.log
+*.egg-info/
+docs/images/*.tmp
+.DS_Store
+.env
