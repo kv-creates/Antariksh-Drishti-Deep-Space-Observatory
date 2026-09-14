@@ -95,6 +95,15 @@
 <label>Background (e-) <input id="bg" type="range" min="0" max="1000" value="100" /></label>
 <p>SNR ≈ <strong id="snr-val">—</strong></p><canvas id="snr-canvas" width="520" height="140" aria-label="SNR bar"></canvas></div></div></div></section>
 
+<section class="section" id="pipeline"><div class="wrap"><h2>🔗 Pipeline</h2><div class="card"><img src="../docs/images/pipeline.png" alt="Pipeline diagram" loading="lazy" />
+<div class="flow" aria-label="Pipeline flow"><span>TLE</span><i>→</i><span>SGP4</span><i>→</i><span>Scheduler</span><i>→</i><span>Imager</span><i>→</i><span>Photometry</span><i>→</i><span>Dashboard</span></div>
+<p class="caption">Each block maps to one <code>src/</code> module · see README mermaid</p></div></div></section>
+<section class="section" id="quickstart"><div class="wrap"><h2>🚀 Run it locally</h2><div class="card"><pre><code>git clone https://github.com/kv-creates/Antariksh-Drishti-Deep-Space-Observatory.git
+pip install -r requirements.txt
+python scripts/generate_visuals.py
+pytest -q
+python -m src.main</code></pre><div class="hero-cta"><a class="btn btn-primary" href="https://github.com/kv-creates/Antariksh-Drishti-Deep-Space-Observatory">Star on GitHub</a><a class="btn btn-ghost" href="#top">Back to top ↑</a></div></div></div></section>
+
 </main>
 <footer class="footer"><div class="wrap"><p>MIT © 2026 kv-creates · Antariksh-Drishti · Ad astra 🚀</p></div></footer>
 <script src="app.js" defer></script>
