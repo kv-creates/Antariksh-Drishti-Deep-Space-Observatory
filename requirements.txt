@@ -1,5 +1,9 @@
+# Antariksh-Drishti runtime (pinned for reproducibility)
 fastapi==0.110.0
 uvicorn==0.29.0
-pytest==8.0.0
 numpy==1.26.0
 matplotlib==3.10.0
+pytest==8.0.0
+# dev (optional):
+# black==24.4.2
+# ruff==0.4.10
