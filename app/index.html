@@ -88,6 +88,13 @@
 <div class="grid-2"><div class="card"><img src="../docs/images/schedule-gantt.png" alt="Schedule Gantt" loading="lazy" /><p class="caption">Fig 5 — blue = accepted · gaps = slews · <code>docs/scheduling.md</code></p></div>
 <div class="card"><h3>Tonight's queue</h3><ol class="queue"><li><strong>TOI-715 b</strong><span>00:00–01:00 · pri 9.2</span></li><li><strong>HD 209458 b</strong><span>01:05–01:35 · pri 8.7</span></li><li><strong>K2-18 b</strong><span>01:40–02:25 · pri 8.1</span></li></ol><p class="caption">Efficiency = scheduled / requested · live logic in <code>src/scheduler.py</code></p></div></div></div></section>
 
+<section class="section" id="detector"><div class="wrap"><h2>🔬 Detector Laboratory</h2>
+<p class="lede">CCD equation — SNR = F / √(F + B + RN²). Tune aperture to maximize.</p>
+<div class="grid-2"><div class="card"><img src="../docs/images/snr-heatmap.png" alt="SNR heatmap" loading="lazy" /><p class="caption">Fig 6 — 10×10 px SNR · <code>src/photometry.py:snr</code></p></div>
+<div class="card"><h3>SNR calculator</h3><label>Flux (e-) <input id="flux" type="range" min="100" max="10000" value="2000" /></label>
+<label>Background (e-) <input id="bg" type="range" min="0" max="1000" value="100" /></label>
+<p>SNR ≈ <strong id="snr-val">—</strong></p><canvas id="snr-canvas" width="520" height="140" aria-label="SNR bar"></canvas></div></div></div></section>
+
 </main>
 <footer class="footer"><div class="wrap"><p>MIT © 2026 kv-creates · Antariksh-Drishti · Ad astra 🚀</p></div></footer>
 <script src="app.js" defer></script>
