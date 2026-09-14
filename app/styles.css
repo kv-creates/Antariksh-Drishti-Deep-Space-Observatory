@@ -57,3 +57,9 @@ h1{font-size:clamp(32px,5vw,54px);line-height:1.05;margin:0 0 12px}
 .section{scroll-margin-top:80px}
 
 @media(max-width:860px){.nav.open a{display:block}.burger{display:block;background:transparent;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px}}
+
+/* a11y */
+.skip-link:focus{outline:3px solid #60a5fa}
+@media (prefers-contrast:more){body{background:#000;color:#fff}.card{border-color:#fff}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+canvas:focus-visible{outline:2px dashed var(--accent)}

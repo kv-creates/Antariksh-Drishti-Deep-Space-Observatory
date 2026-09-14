@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -58,7 +58,7 @@
 <div class="card"><h3>Period calculator</h3>
 <label>Altitude radius a (km) <input id="alt" type="range" min="6600" max="42000" value="7000" step="50" /></label>
 <p><strong id="alt-val">7000 km</strong> → <strong id="period-val">5828 s</strong> (<span id="period-min">97.1 min</span>)</p>
-<canvas id="orbit-canvas" width="520" height="260" aria-label="Orbit preview"></canvas>
+<canvas id="orbit-canvas" tabindex="0" role="img" width="520" height="260" aria-label="Orbit preview"></canvas>
 <p class="caption">LEO vs MEO preview · canvas, no dependencies</p></div>
 <div class="card"><img src="../docs/images/hero-orbits.png" alt="Constellation orbits" loading="lazy" /><p class="caption">Fig 1 — committed render from <code>scripts/generate_visuals.py</code></p>
 <details><summary>Physics notes</summary><p>T = 2π√(a³/μ), μ=398600.4418 km³/s². J2 correction uses (R/a)²·cos²(i). See <code>docs/orbits.md</code>.</p></details></div>
@@ -71,7 +71,7 @@
 <div class="card"><h3>Depth detector</h3>
 <label>Threshold (%) <input id="thresh" type="range" min="0.1" max="2" value="0.5" step="0.1" /></label>
 <p>Measured depth: <strong>1.20%</strong> → <strong id="detect-out">CANDIDATE ✓</strong></p>
-<canvas id="lc-canvas" width="520" height="220" aria-label="Lightcurve sketch"></canvas>
+<canvas id="lc-canvas" tabindex="0" role="img" width="520" height="220" aria-label="Lightcurve sketch"></canvas>
 <p class="caption">Interactive sketch mirrors committed PNG</p></div>
 </div></div></section>
 
@@ -94,7 +94,7 @@
 <div class="grid-2"><div class="card"><img src="../docs/images/snr-heatmap.png" alt="SNR heatmap" loading="lazy" /><p class="caption">Fig 6 — 10×10 px SNR · <code>src/photometry.py:snr</code></p></div>
 <div class="card"><h3>SNR calculator</h3><label>Flux (e-) <input id="flux" type="range" min="100" max="10000" value="2000" /></label>
 <label>Background (e-) <input id="bg" type="range" min="0" max="1000" value="100" /></label>
-<p>SNR ≈ <strong id="snr-val">—</strong></p><canvas id="snr-canvas" width="520" height="140" aria-label="SNR bar"></canvas></div></div></div></section>
+<p>SNR ≈ <strong id="snr-val">—</strong></p><canvas id="snr-canvas" tabindex="0" role="img" width="520" height="140" aria-label="SNR bar"></canvas></div></div></div></section>
 
 <section class="section" id="pipeline"><div class="wrap"><h2>🔗 Pipeline</h2><div class="card"><img src="../docs/images/pipeline.png" alt="Pipeline diagram" loading="lazy" />
 <div class="flow" aria-label="Pipeline flow"><span>TLE</span><i>→</i><span>SGP4</span><i>→</i><span>Scheduler</span><i>→</i><span>Imager</span><i>→</i><span>Photometry</span><i>→</i><span>Dashboard</span></div>
