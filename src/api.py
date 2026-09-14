@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 class DetectRequest(BaseModel):
-    flux: List[float] = Field(..., min_items=1, description="Normalized flux array")
+    flux: List[float] = Field(..., min_length=1, description="Normalized flux array")
     threshold: float = Field(0.005, ge=0, le=0.5, description="Depth threshold")
 
 class DetectResponse(BaseModel):

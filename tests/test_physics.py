@@ -20,7 +20,10 @@ def test_snr_positive():
     assert snr(2000) > 10
 
 def test_lightcurve_list():
-    assert lightcurve([0, 1.75, 5.0], depth=0.012)[-1] < 1
+    # period=3.5d → transits at 0, 3.5, 7.0 …; 5.0 is out-of-transit
+    lc = lightcurve([0, 1.75, 3.5], depth=0.012)
+    assert lc[0] < 1 and lc[2] < 1
+    assert lc[1] == 1.0
 
 def test_depth_ratio():
     assert abs(depth_to_radius_ratio(0.01) - 0.1) < 1e-9

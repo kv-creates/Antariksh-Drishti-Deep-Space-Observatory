@@ -1,4 +1,7 @@
 """End-to-end demo: orbit → schedule → photometry → detection."""
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.orbit import period
 from src.scheduler import schedule
 from src.photometry import lightcurve, snr
