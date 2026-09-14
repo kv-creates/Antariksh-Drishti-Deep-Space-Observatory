@@ -124,3 +124,110 @@ graph TD
 
 </div>
 
+## 🗺️ Repository Map
+
+```text
+src/
+  orbit.py        period, propagate, period_j2  — Kepler + J2
+  scheduler.py    greedy priority + Sun + SAA   — JWST-like
+  photometry.py   snr, lightcurve               — CCD equation
+  transit.py      depth detector                — threshold + BLS
+  imager.py       synthetic star fields         — Poisson + PSF
+  api.py          FastAPI /health /period /detect
+  coords.py, mag.py, airmass.py, exposure.py, visibility.py,
+  catalog.py, detrend.py, bls.py, fits_header.py, utils.py
+app/
+  index.html      Mission dashboard (no build step)
+  styles.css      Antariksh dark-space design system
+  app.js          Canvas renders + interactivity
+docs/images/      6 PNGs rendered by scripts/generate_visuals.py
+data/             targets.csv, bright-stars.csv, example-lightcurve.csv
+evaluation/       metrics.py, report.py
+examples/         quickstart.py, schedule_example.py
+```
+
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/kv-creates/Antariksh-Drishti-Deep-Space-Observatory.git
+cd Antariksh-Drishti-Deep-Space-Observatory
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# macOS/Linux:
+# source .venv/bin/activate
+pip install -r requirements.txt
+python scripts/generate_visuals.py
+pytest -q
+python -m src.main
+```
+
+Open the dashboard (no server needed):
+
+```bash
+# just open in browser:
+app/index.html
+```
+
+Or run the API:
+
+```bash
+uvicorn src.api:app --reload --port 8000
+# → http://127.0.0.1:8000/docs
+```
+
+## 🔌 API Reference
+
+| Method | Endpoint | Example |
+|--------|----------|---------|
+| `GET` | `/health` | `curl localhost:8000/health` |
+| `GET` | `/period/{a_km}` | `curl localhost:8000/period/7000` |
+| `POST` | `/detect` | `curl -X POST localhost:8000/detect -H "Content-Type: application/json" -d '{"flux":[1,0.99,1]}'` |
+
+Full spec: [`docs/api.md`](docs/api.md)
+
+## 🖼️ Reproduce Visuals
+
+```bash
+python scripts/generate_visuals.py
+# outputs docs/images/*.png — already committed, shown above
+python scripts/run_demo.py
+python scripts/validate.py
+python scripts/check_data.py
+```
+
+## 📈 Performance
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| Period @ 7000 km | 5828 s | `src/orbit.py:period` |
+| Transit depth (demo) | 1.2% | `src/photometry.py:lightcurve` |
+| Detection threshold | 0.5% | `src/transit.py:detect` |
+| Scheduler slew | 5 min | `src/scheduler.py:schedule` |
+| Tests | 15 passed | `pytest -q` |
+
+## 🗺️ Roadmap
+
+- [x] v1.0 — Orbit, scheduler, photometry, transit + 6 visuals
+- [x] v1.2 — Catalog, BLS, calibration docs
+- [ ] v1.3 — Interactive dashboard polish (this release series)
+- [ ] v1.4 — SGP4 + real TLE support, FITS I/O
+- [ ] v2.0 — Multi-target optimizer + SAA weather input
+
+See [`docs/roadmap.md`](docs/roadmap.md).
+
+## 🤝 Contributing
+
+PRs welcome! Please read [`CONTRIBUTING.md`](CONTRIBUTING.md), run `pytest -q` and `python scripts/generate_visuals.py` before pushing.
+
+## 📄 License
+
+MIT © 2026 kv-creates (Krishna Vishwakarma) — see [LICENSE](LICENSE).
+
+<div align="center">
+
+**Built for clear skies. PRs welcome. Ad astra. 🚀**
+
+[⬆ Back to top](#️-antariksh-drishti--deep-space-observatory)
+
+</div>
