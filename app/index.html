@@ -51,7 +51,18 @@
 </div>
 </div>
 </section>
-<section class="section" id="orbits"><div class="wrap"><h2>Orbits</h2><p>More panels landing in next commits.</p></div></section>
+<section class="section" id="orbits"><div class="wrap"><h2>🛰️ Orbit Mechanics</h2>
+<p class="lede">Kepler + J2-aware circular propagation. Try different altitudes — period updates live via <code>src/orbit.py:period</code>.</p>
+<div class="grid-2">
+<div class="card"><h3>Period calculator</h3>
+<label>Altitude radius a (km) <input id="alt" type="range" min="6600" max="42000" value="7000" step="50" /></label>
+<p><strong id="alt-val">7000 km</strong> → <strong id="period-val">5828 s</strong> (<span id="period-min">97.1 min</span>)</p>
+<canvas id="orbit-canvas" width="520" height="260" aria-label="Orbit preview"></canvas>
+<p class="caption">LEO vs MEO preview · canvas, no dependencies</p></div>
+<div class="card"><img src="../docs/images/hero-orbits.png" alt="Constellation orbits" loading="lazy" /><p class="caption">Fig 1 — committed render from <code>scripts/generate_visuals.py</code></p>
+<details><summary>Physics notes</summary><p>T = 2π√(a³/μ), μ=398600.4418 km³/s². J2 correction uses (R/a)²·cos²(i). See <code>docs/orbits.md</code>.</p></details></div>
+</div></div></section>
+
 </main>
 <footer class="footer"><div class="wrap"><p>MIT © 2026 kv-creates · Antariksh-Drishti · Ad astra 🚀</p></div></footer>
 <script src="app.js" defer></script>
