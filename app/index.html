@@ -1,1 +1,56 @@
-<!doctype html><html><head><meta charset=utf-8><title>Antariksh</title></head><body><h1>Antariksh-Drishti</h1><p>See README visuals.</p><img src=../docs/images/lightcurve.png width=600><img src=../docs/images/hr-diagram.png width=400></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Antariksh-Drishti — Deep Space Observatory Dashboard</title>
+<meta name="description" content="Antariksh-Drishti mission dashboard: orbits, transits, HR diagram, schedule, detector SNR." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar" id="top">
+<div class="wrap topbar-inner">
+<a class="brand" href="#top" aria-label="Antariksh-Drishti home">
+<span class="brand-mark" aria-hidden="true">🛰️</span>
+<span class="brand-text"><strong>Antariksh-Drishti</strong><small>Deep Space Observatory</small></span>
+</a>
+<nav class="nav" aria-label="Primary">
+<a href="#mission">Mission</a>
+<a href="#orbits">Orbits</a>
+<a href="#transits">Transits</a>
+<a href="#schedule">Schedule</a>
+<a href="#detector">Detector</a>
+<a class="btn btn-small" href="https://github.com/kv-creates/Antariksh-Drishti-Deep-Space-Observatory">GitHub ↗</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="hero" id="mission">
+<div class="wrap hero-grid">
+<div>
+<p class="eyebrow">ISRO-grade · Open-source · Python 3.11+</p>
+<h1>Vision of Space,<br />built in the open.</h1>
+<p class="lede">End-to-end observatory simulator — orbit design, JWST-like scheduling, synthetic imaging, photometry and exoplanet detection. Every plot below is generated from <code>src/</code>.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#orbits">Explore the dashboard</a>
+<a class="btn btn-ghost" href="../README.md">Read the README</a>
+</div>
+<dl class="stat-row">
+<div><dt>Period @ 7000 km</dt><dd>5828 s</dd></div>
+<div><dt>Transit depth</dt><dd>1.2%</dd></div>
+<div><dt>Tests</dt><dd>15 passed</dd></div>
+</dl>
+</div>
+<div class="hero-media">
+<img src="../docs/images/hero-orbits.png" alt="LEO and MEO observatory orbits" loading="eager" />
+<p class="caption">Fig 1 — LEO + MEO constellation · <code>src/orbit.py</code></p>
+</div>
+</div>
+</section>
+<section class="section" id="orbits"><div class="wrap"><h2>Orbits</h2><p>More panels landing in next commits.</p></div></section>
+</main>
+<footer class="footer"><div class="wrap"><p>MIT © 2026 kv-creates · Antariksh-Drishti · Ad astra 🚀</p></div></footer>
+<script src="app.js" defer></script>
+</body>
+</html>
