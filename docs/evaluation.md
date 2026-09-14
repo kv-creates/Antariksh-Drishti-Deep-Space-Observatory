@@ -1,5 +1,9 @@
-# Evaluation
+# 📏 Evaluation
 
-![SNR](../docs/images/snr-heatmap.png)
+`evaluation/metrics.py` computes recall, efficiency, SNR error. `evaluation/report.py` writes Markdown summary.
 
-Run `pytest -q`, `python scripts/validate.py`.
+```bash
+python -m evaluation.report
+```
+
+Thresholds: recall ≥95%, efficiency ≥70%, SNR ±5%. CI fails otherwise (see `.github/workflows/ci.yml`).
