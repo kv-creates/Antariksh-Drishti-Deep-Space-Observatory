@@ -77,3 +77,8 @@ html[data-theme="light"] .topbar{background:rgba(248,250,252,.92)}
 .chips{display:flex;gap:8px;margin:8px 0}.chip{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;padding:4px 10px;font-size:12px;cursor:pointer}.chip.active{background:var(--nasa);color:#fff;border-color:var(--nasa)}
 .dlg{border:1px solid var(--line);border-radius:12px;padding:18px;max-width:520px;background:var(--card);color:var(--text)}.dlg::backdrop{background:rgba(2,6,23,.6)}
 .search{display:flex;align-items:center}.search input{background:#0b142b;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--text);font-size:13px;width:200px}
+
+h2{letter-spacing:-.02em}
+.lede{max-width:62ch}
+.card p{color:var(--muted)}
+code{font-family:var(--mono);font-size:.9em;background:rgba(148,163,184,.14);padding:1px 6px;border-radius:6px}
