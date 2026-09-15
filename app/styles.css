@@ -74,3 +74,4 @@ html[data-theme="light"] .topbar{background:rgba(248,250,252,.92)}
 .hero{position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:-40%;background:radial-gradient(600px 300px at 70% 10%, rgba(96,165,250,.18), transparent 60%);pointer-events:none}
 .card img[title]{cursor:help}
+.chips{display:flex;gap:8px;margin:8px 0}.chip{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;padding:4px 10px;font-size:12px;cursor:pointer}.chip.active{background:var(--nasa);color:#fff;border-color:var(--nasa)}

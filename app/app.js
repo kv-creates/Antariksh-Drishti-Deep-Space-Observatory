@@ -54,3 +54,11 @@
 const btn=document.getElementById("theme-btn"), root=document.documentElement;
 const saved=localStorage.getItem("ad-theme"); if(saved) root.setAttribute("data-theme",saved);
 if(btn) btn.addEventListener("click",()=>{ const cur=root.getAttribute("data-theme")==="light"?"dark":"light"; root.setAttribute("data-theme",cur); localStorage.setItem("ad-theme",cur); });
+
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active")); b.classList.add("active");
+  const f=b.dataset.f; document.querySelectorAll(".queue li").forEach(li=>{
+    const txt=li.textContent; const show = f==="all" || (f==="high" && txt.includes("pri 9")) || (f==="saa" && !txt.includes("SAA"));
+    li.style.display=show?"flex":"none";
+  });
+}));
