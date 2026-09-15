@@ -100,7 +100,7 @@
 
 <section class="section" id="pipeline"><div class="wrap"><h2>🔗 Pipeline</h2><div class="card"><img src="../docs/images/pipeline.png" alt="Pipeline diagram" loading="lazy" />
 <div class="flow" aria-label="Pipeline flow"><span>TLE</span><i>→</i><span>SGP4</span><i>→</i><span>Scheduler</span><i>→</i><span>Imager</span><i>→</i><span>Photometry</span><i>→</i><span>Dashboard</span></div>
-<p class="caption">Each block maps to one <code>src/</code> module · see README mermaid</p></div></div></section>
+<p><button class="btn btn-small" onclick="document.getElementById('pipe-dlg').showModal()">Pipeline details</button></p><dialog id="pipe-dlg" class="dlg"><h3>Pipeline</h3><p>TLE → propagate (J2) → schedule (Sun+SAA) → imager (PSF) → photometry → detect → dashboard.</p><form method="dialog"><button class="btn">Close</button></form></dialog><p class="caption">Each block maps to one <code>src/</code> module · see README mermaid</p></div></div></section>
 <section class="section" id="quickstart"><div class="wrap"><h2>🚀 Run it locally</h2><div class="card"><pre><code>git clone https://github.com/kv-creates/Antariksh-Drishti-Deep-Space-Observatory.git
 pip install -r requirements.txt
 python scripts/generate_visuals.py
