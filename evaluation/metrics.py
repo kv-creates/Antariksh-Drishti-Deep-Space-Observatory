@@ -15,3 +15,15 @@ def snr_error(flux=2000) -> float:
     import math
     expected = flux / math.sqrt(flux + 100 + 25)
     return abs(snr(flux) - expected) / expected
+
+def confusion(fluxes, labels, threshold=0.005):
+    """Return {tp,fp,tn,fn} for fluxes vs bool labels."""
+    from src.transit import detect
+    tp=fp=tn=fn=0
+    for f, y in zip(fluxes, labels):
+        pred=detect(f, threshold=threshold)["candidate"]
+        if pred and y: tp+=1
+        elif pred and not y: fp+=1
+        elif not pred and not y: tn+=1
+        else: fn+=1
+    return {"tp":tp,"fp":fp,"tn":tn,"fn":fn}
