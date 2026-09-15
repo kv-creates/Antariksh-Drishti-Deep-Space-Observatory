@@ -68,3 +68,8 @@ canvas:focus-visible{outline:2px dashed var(--accent)}
 html[data-theme="light"] body{background:#f8fafc;color:#0f172a}
 html[data-theme="light"] .topbar{background:rgba(248,250,252,.92)}
 #theme-btn{cursor:pointer}
+
+.hero-media img{transition:transform .6s ease}
+.hero:hover .hero-media img{transform:scale(1.02)}
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40%;background:radial-gradient(600px 300px at 70% 10%, rgba(96,165,250,.18), transparent 60%);pointer-events:none}
