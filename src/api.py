@@ -2,9 +2,11 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-from typing import List
+from typing import List, Dict
 from .orbit import period
 from .transit import detect
+from .scheduler import schedule
+from .photometry import snr
 
 app = FastAPI(
     title="Antariksh-Drishti",
@@ -53,5 +55,16 @@ def detect_endpoint(body: DetectRequest):
 
 # Back-compat: allow raw dict posts like {"flux": [...]}
 @app.post("/detect-legacy", tags=["photometry"])
+class ScheduleRequest(BaseModel):
+    requests: List[Dict] = Field(..., description="Scheduler requests")
+
+@app.post("/schedule", tags=["scheduler"])
+def schedule_endpoint(body: ScheduleRequest):
+    return schedule(body.requests)
+
+@app.get("/snr/{flux}", tags=["photometry"])
+def snr_endpoint(flux: float, background: float = 100, read_noise: float = 5):
+    return {"flux": flux, "snr": snr(flux, background, read_noise)}
+
 def detect_legacy(body: dict):
     return detect(body.get("flux", []))
