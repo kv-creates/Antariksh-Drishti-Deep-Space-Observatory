@@ -11,7 +11,7 @@ from .photometry import snr
 app = FastAPI(
     title="Antariksh-Drishti",
     description="Deep Space Observatory: orbit, photometry and transit detection API.",
-    version="1.3.0",
+    version="1.4.0",
     docs_url="/docs",
     redoc_url="/redoc",
 )
@@ -38,7 +38,7 @@ class PeriodResponse(BaseModel):
 @app.get("/health", tags=["ops"])
 def health():
     """Liveness probe."""
-    return {"status": "ok", "service": "antariksh-drishti", "version": "1.3.0"}
+    return {"status": "ok", "service": "antariksh-drishti", "version": "1.4.0"}
 
 @app.get("/period/{a}", response_model=PeriodResponse, tags=["orbit"])
 def period_endpoint(a: float):

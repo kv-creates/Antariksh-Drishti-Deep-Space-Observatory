@@ -216,7 +216,7 @@ python scripts/check_data.py
 - [ ] v1.4 — SGP4 + real TLE support, FITS I/O
 - [ ] v2.0 — Multi-target optimizer + SAA weather input
 
-See [`docs/roadmap.md`](docs/roadmap.md).
+See [`docs/roadmap.md`](docs/roadmap.md). Current: **v1.4.0**.
 
 ## 🤝 Contributing
 

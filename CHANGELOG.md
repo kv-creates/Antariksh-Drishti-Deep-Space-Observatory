@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.4.0 — 2026-09-14 — Constellation & API Expansion
+
+### Added
+- Theme toggle, search, pipeline modal, detector breakdown, schedule filters
+- TLE stub, ground track, multi-night optimizer, aperture & cosmic helpers, BLS refine
+- New API: `POST /schedule`, `GET /snr/{flux}` with OpenAPI examples
+- Deployment guide, compose, coverage CI, benchmark, yield model, calibration mermaid
+- Dev tooling (`requirements-dev.txt`, `pyproject.toml`), notebook starter, confusion matrix
+
+### Changed
+- README performance → 33 tests, roadmap v1.4 done
+- VERSION and `src/__init__.py` → 1.4.0
+
+
 ## v1.3.0 — 2026-09-14 — Professional Dashboard Release
 
 ### Added
