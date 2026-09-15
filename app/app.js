@@ -70,3 +70,7 @@ document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
   const q=document.getElementById("q");
   if(q){ q.addEventListener("input",()=>{ const v=q.value.toLowerCase(); document.querySelectorAll(".section").forEach(s=>{ s.style.display = !v || s.textContent.toLowerCase().includes(v) ? "" : "none"; }); });
     document.addEventListener("keydown",e=>{ if(e.key==="/"){ e.preventDefault(); q.focus(); }}); }
+
+  // announce filter changes
+  const live=document.getElementById("live");
+  if(live) document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{ live.textContent="Filter: "+b.textContent; }));
