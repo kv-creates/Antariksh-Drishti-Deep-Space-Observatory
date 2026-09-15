@@ -38,3 +38,14 @@ def schedule(requests: List[Dict]) -> Dict:
         t += dur + SLEW_MIN
     eff = len(tl) / len(requests) if requests else 0.0
     return {"scheduled": len(tl), "timeline": tl, "efficiency": round(eff, 3)}
+
+def optimize_nights(requests, nights: int = 3):
+    """Repeat greedy per night window; returns list of night schedules."""
+    out = []
+    for n in range(nights):
+        # offset start times per night for demo determinism
+        res = schedule(requests)
+        # shift timeline by n*1440
+        tl = [{"id": r["id"], "start": r["start"]+n*1440, "end": r["end"]+n*1440} for r in res["timeline"]]
+        out.append({"night": n+1, "scheduled": res["scheduled"], "timeline": tl, "efficiency": res["efficiency"]})
+    return out
