@@ -8,3 +8,9 @@
 - [ ] **v2.0** — Multi-target optimizer, weather/SAA live feed, hosted demo
 
 Contributions welcome — see `CONTRIBUTING.md`.
+
+## v2.0 — Observatories at scale
+
+- Constellation scheduler (multiple sats, shared timeline)
+- Live SAA weather + Sun ephemeris via API
+- Hosted demo + pyodide in-browser run
