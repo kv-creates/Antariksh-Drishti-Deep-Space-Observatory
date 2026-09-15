@@ -22,7 +22,10 @@
   }
   function updAlt(){ if(!alt) return; const a=+alt.value; const T=period(a);
     altV.textContent=a+" km"; perV.textContent=Math.round(T)+" s"; perM.textContent=(T/60).toFixed(1)+" min"; drawOrbit(a); }
-  if(alt){alt.addEventListener("input",updAlt); updAlt();}
+  const inc=document.getElementById("inc");
+  function drawOrbitTilt(a, incDeg){ if(!oc) return; drawOrbit(a); const c=oc.getContext("2d"); c.fillStyle="#94a3b8"; c.font="11px system-ui"; c.fillText("i="+incDeg+" deg", 12, 22); }
+  function updAll(){ const a=+alt.value, i=inc?+inc.value:51; const T=period(a); altV.textContent=a+" km"; perV.textContent=Math.round(T)+" s"; perM.textContent=(T/60).toFixed(1)+" min"; drawOrbitTilt(a,i); }
+  if(alt){alt.addEventListener("input",updAll); if(inc) inc.addEventListener("input",updAll); updAll(); }
   // lightcurve sketch + threshold
   const th=$("thresh"), out=$("detect-out"), lc=$("lc-canvas");
   function drawLC(){ if(!lc) return; const c=lc.getContext("2d"); const W=lc.width,H=lc.height;

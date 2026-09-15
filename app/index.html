@@ -57,6 +57,7 @@
 <p class="lede">Kepler + J2-aware circular propagation. Try different altitudes — period updates live via <code>src/orbit.py:period</code>.</p>
 <div class="grid-2">
 <div class="card"><h3>Period calculator</h3>
+<label>Inclination (°) <input id="inc" type="range" min="0" max="98" value="51" step="1" /></label>
 <label>Altitude radius a (km) <input id="alt" type="range" min="6600" max="42000" value="7000" step="50" /></label>
 <p><strong id="alt-val">7000 km</strong> → <strong id="period-val">5828 s</strong> (<span id="period-min">97.1 min</span>)</p>
 <canvas id="orbit-canvas" tabindex="0" role="img" width="520" height="260" aria-label="Orbit preview"></canvas>
