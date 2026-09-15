@@ -65,3 +65,8 @@ document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
     li.style.display=show?"flex":"none";
   });
 }));
+
+  // search filter + /
+  const q=document.getElementById("q");
+  if(q){ q.addEventListener("input",()=>{ const v=q.value.toLowerCase(); document.querySelectorAll(".section").forEach(s=>{ s.style.display = !v || s.textContent.toLowerCase().includes(v) ? "" : "none"; }); });
+    document.addEventListener("keydown",e=>{ if(e.key==="/"){ e.preventDefault(); q.focus(); }}); }
