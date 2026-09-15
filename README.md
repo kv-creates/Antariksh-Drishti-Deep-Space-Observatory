@@ -228,6 +228,8 @@ MIT © 2026 kv-creates (Krishna Vishwakarma) — see [LICENSE](LICENSE).
 
 **Built for clear skies. PRs welcome. Ad astra. 🚀**
 
+<p align="center"><em>Social preview: <code>docs/images/hero-orbits.png</code> · Open Graph ready · Pin <code>pip install -r requirements.txt</code> for reproducible visuals</em></p>
+
 [⬆ Back to top](#️-antariksh-drishti--deep-space-observatory)
 
 </div>
