@@ -63,3 +63,8 @@ h1{font-size:clamp(32px,5vw,54px);line-height:1.05;margin:0 0 12px}
 @media (prefers-contrast:more){body{background:#000;color:#fff}.card{border-color:#fff}}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 canvas:focus-visible{outline:2px dashed var(--accent)}
+
+:root[data-theme="light"]{--bg:#f8fafc;--bg-2:#eef2f7;--card:#ffffff;--card-2:#f1f5f9;--line:#cbd5e1;--text:#0f172a;--muted:#475569}
+html[data-theme="light"] body{background:#f8fafc;color:#0f172a}
+html[data-theme="light"] .topbar{background:rgba(248,250,252,.92)}
+#theme-btn{cursor:pointer}

@@ -45,3 +45,8 @@
   if(fl){fl.addEventListener("input",updSNR); bg.addEventListener("input",updSNR); updSNR();}
   // smooth anchor offset handled by CSS scroll-margin
 })();
+
+// theme toggle
+const btn=document.getElementById("theme-btn"), root=document.documentElement;
+const saved=localStorage.getItem("ad-theme"); if(saved) root.setAttribute("data-theme",saved);
+if(btn) btn.addEventListener("click",()=>{ const cur=root.getAttribute("data-theme")==="light"?"dark":"light"; root.setAttribute("data-theme",cur); localStorage.setItem("ad-theme",cur); });
