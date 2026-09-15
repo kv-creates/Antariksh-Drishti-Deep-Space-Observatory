@@ -96,7 +96,7 @@
 <div class="grid-2"><div class="card"><img src="../docs/images/snr-heatmap.png" alt="SNR heatmap" loading="lazy" /><p class="caption">Fig 6 — 10×10 px SNR · <code>src/photometry.py:snr</code></p></div>
 <div class="card"><h3>SNR calculator</h3><label>Flux (e-) <input id="flux" type="range" min="100" max="10000" value="2000" /></label>
 <label>Background (e-) <input id="bg" type="range" min="0" max="1000" value="100" /></label>
-<p>SNR ≈ <strong id="snr-val">—</strong></p><canvas id="snr-canvas" tabindex="0" role="img" width="520" height="140" aria-label="SNR bar"></canvas></div></div></div></section>
+<p>SNR ≈ <strong id="snr-val">—</strong></p><canvas id="snr-canvas" tabindex="0" role="img" width="520" height="90" aria-label="SNR bar"></canvas></div><p class="caption">Compare: photon-limited vs read-noise floor</p><canvas id="snr2" width="520" height="70" aria-label="SNR breakdown"></canvas></div></div></section>
 
 <section class="section" id="pipeline"><div class="wrap"><h2>🔗 Pipeline</h2><div class="card"><img src="../docs/images/pipeline.png" alt="Pipeline diagram" loading="lazy" />
 <div class="flow" aria-label="Pipeline flow"><span>TLE</span><i>→</i><span>SGP4</span><i>→</i><span>Scheduler</span><i>→</i><span>Imager</span><i>→</i><span>Photometry</span><i>→</i><span>Dashboard</span></div>

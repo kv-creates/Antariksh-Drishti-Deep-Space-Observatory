@@ -46,6 +46,9 @@
     const w=Math.min(1,snr/80)*sc.width; const g=c.createLinearGradient(0,0,sc.width,0); g.addColorStop(0,"#2563eb"); g.addColorStop(1,"#34d399");
     c.fillStyle=g; c.fillRect(0,40,w,44); c.fillStyle="#94a3b8"; c.font="12px system-ui"; c.fillText("0",4,120); c.fillText("80σ",sc.width-36,120);
   }
+  const sc2=document.getElementById("snr2");
+  function drawBreakdown(){ if(!sc2) return; const c=sc2.getContext("2d"); const F=+fl.value,B=+bg.value; c.clearRect(0,0,sc2.width,sc2.height); c.fillStyle="#0b142b"; c.fillRect(0,0,sc2.width,sc2.height); const photon=F/Math.sqrt(F), r=F/Math.sqrt(25); c.fillStyle="#60a5fa"; c.fillRect(0,12,Math.min(1,photon/80)*sc2.width,12); c.fillStyle="#f472b6"; c.fillRect(0,34,Math.min(1,r/80)*sc2.width,12); c.fillStyle="#94a3b8"; c.font="11px system-ui"; c.fillText("photon",4,22); c.fillText("read-noise",4,44); }
+  const _oldSNR=updSNR; updSNR=function(){ _oldSNR(); drawBreakdown();};
   if(fl){fl.addEventListener("input",updSNR); bg.addEventListener("input",updSNR); updSNR();}
   // smooth anchor offset handled by CSS scroll-margin
 })();
