@@ -204,13 +204,15 @@ python scripts/check_data.py
 | Transit depth (demo) | 1.2% | `src/photometry.py:lightcurve` |
 | Detection threshold | 0.5% | `src/transit.py:detect` |
 | Scheduler slew | 5 min | `src/scheduler.py:schedule` |
-| Tests | 15 passed | `pytest -q` |
+| Tests | 26 passed | `pytest -q` |
+| Coverage | ≥ 85% core | `tests/test_physics.py` |
 
 ## 🗺️ Roadmap
 
 - [x] v1.0 — Orbit, scheduler, photometry, transit + 6 visuals
 - [x] v1.2 — Catalog, BLS, calibration docs
-- [ ] v1.3 — Interactive dashboard polish (this release series)
+- [x] v1.3 — Interactive dashboard polish (this release series)
+- [ ] v1.4 — SGP4 + TLE, FITS I/O, notebooks (next series)
 - [ ] v1.4 — SGP4 + real TLE support, FITS I/O
 - [ ] v2.0 — Multi-target optimizer + SAA weather input
 
