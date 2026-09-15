@@ -35,7 +35,8 @@
       const yy=f===1?40:110; x===0?c.moveTo(x,yy):c.lineTo(x,yy); }
     c.stroke(); c.fillStyle="#64748b"; c.font="11px system-ui"; c.fillText("days 0 → 10",10,H-8); c.fillText("flux",8,14);
   }
-  function updTh(){ if(!th) return; const t=+th.value; const detected=1.2>t; out.textContent=detected?"CANDIDATE ✓":"NULL ✗"; out.style.color=detected?"#059669":"#dc2626"; drawLC(); }
+  const tv=document.getElementById("thresh-val");
+  function updTh(){ if(!th) return; const t=+th.value; if(tv) tv.textContent=t.toFixed(1)+"%"; const detected=1.2>t; out.textContent=detected?"CANDIDATE ✓":"NULL ✗"; out.style.color=detected?"#059669":"#dc2626"; drawLC(); }
   if(th){th.addEventListener("input",updTh); updTh();}
   // SNR calc: F/sqrt(F+B+RN^2)
   const fl=$("flux"), bg=$("bg"), sv=$("snr-val"), sc=$("snr-canvas");
