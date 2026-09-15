@@ -7,3 +7,15 @@
 5. **Exposure** — `src/exposure.py:exptime(snr, flux)` + `coadds_needed`
 
 Validate with `scripts/validate.py`.
+
+
+## Flow
+
+```mermaid
+graph LR
+  A[Raw image] --> B[Bias/Dark subtract<br/>detrend.py]
+  B --> C[Flat field]
+  C --> D[Airmass<br/>airmass.py]
+  D --> E[Mag ZP<br/>mag.py]
+  E --> F[Photometry<br/>photometry.py]
+```
