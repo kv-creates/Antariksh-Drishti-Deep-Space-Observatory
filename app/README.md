@@ -40,3 +40,9 @@ All PNGs are committed renders from `../docs/images/` (via `../scripts/generate_
 ## Browser support
 
 Evergreen Chrome / Edge / Firefox / Safari. No external fonts or CDN required (shields in hero degrade gracefully offline).
+
+## Shortcuts
+
+- `/` focus search
+- `Tab` through sliders, canvases (arrow keys on sliders)
+- `Theme` button toggles light/dark (persisted in localStorage)
